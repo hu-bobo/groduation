@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:include="layout :: htmlhead" th:with="title='样本点管理'"></head>
+<link rel="stylesheet" href="../plugins/layui/css/layui.css" media="all">
+<script src="../plugins/layui/layui.js"></script>
+<script src="../plugins/layui/jquery-1.4.4.min.js"></script>
+<body class="layui-layout-body">
+<div class="layui-layout layui-layout-admin">
+    <!--添加或编辑样本点-->
+    <div id="user_form" class="layer_self_wrap">
+        <form id="userForm" lay-filter="layuiadmin-form-useradmin" class="layui-form layui-form-pane"
+              method="post" action=""
+              style="margin:20px 20px;">
+            <input id="gid" type="hidden" name="gid"/>
+            <div class="layui-col-xs12 layui-col-md4">
+                <div class="layui-form-item">
+                    <label class="layui-form-label">样本点名称</label>
+                    <div class="layui-input-inline">
+                        <input id="name" name="name" lay-verify="required" autocomplete="off"
+                               class="layui-input" type="text"/>
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <label class="layui-form-label">提交人</label>
+                    <div class="layui-input-inline">
+                        <input id="optuser" name="optuser" lay-verify="required" autocomplete="off"
+                               class="layui-input" type="text"/>
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <label class="layui-form-label">提交时间</label>
+                    <div class="layui-input-inline">
+                        <input name="time" id="time" placeholder="" autocomplete="off"
+                               class="layui-input" type="text"/>
+                        <!--<input id="birth" name="birth" lay-verify="required" autocomplete="off" class="layui-input" type="text"/>-->
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <label class="layui-form-label">详细地址</label>
+                    <div class="layui-input-inline">
+                        <input id="address" name="address" lay-verify="required" autocomplete="off"
+                               class="layui-input" type="text"/>
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <label class="layui-form-label">备注</label>
+                    <div class="layui-input-inline">
+            <textarea id="remark" name="remark" placeholder="请输入内容"
+                      class="layui-textarea"></textarea>
+                    </div>
+                </div>
+                <div class="layui-form-item layui-hide">
+                    <input type="button" lay-submit lay-filter="LAY-user-front-submit"
+                           id="LAY-user-front-submit"
+                           value="确认">
+                </div>
+            </div>
+        </form>
+    </div>
+    <!--底部-->
+    <script src="./js/pointForm.js"></script>
+</div>
+</body>
+</html>
